@@ -55,30 +55,30 @@ const AvailableMeals = () => {
 
   const mealsList = data.map((meal) => (
     <MealItem
-      id={ meal.id }
-      key={ meal.id }
-      name={ meal.name }
-      description={ meal.description }
-      price={ meal.price }
+      id={meal.id}
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
     />
   ));
   const render = () => {
     if (error)
-      return <p>{ error }</p>
+      return <p>{error}</p>
     if (isLoading)
       return <p>Loading...</p>
     if (!isLoading) {
       if (data.length > 0)
-        return <ul>{ mealsList }</ul>
-      return <p style={ { textAlign: 'center' } }> No Meals Found </p>
+        return <ul>{mealsList}</ul>
+      return <p style={{ textAlign: 'center' }}> No Meals Found </p>
     }
   }
   return (
-    <section className={ classes.meals }>
+    <section className={classes.meals}>
       <Card>
         {/* { !isLoading && <ul>{ mealsList }</ul> }
         { isLoading && <p>Loading...</p> } */}
-        { render() }
+        {render()}
       </Card>
     </section>
   );
